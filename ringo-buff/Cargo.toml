@@ -1,0 +1,27 @@
+[package]
+name = "ringo-buff"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = ["alloc"]
+# Enables [`HeapBuffer`] and `Vec` support.
+alloc = []
+# Implements [`bytes::Buf`] and [`bytes::BufMut`] traits.
+# Requires the `bytes` crate.
+buf-trait = ["dep:bytes"]
+# Enables `hybrid-array` support for [`StackBuffer`].
+# Requires the `hybrid-array` crate.
+hybrid-array = ["dep:hybrid-array"]
+# Enables `zeroize` support for the buffered data.
+# Requires the `zeroize` crate.
+zeroize = ["dep:zeroize", "hybrid-array?/zeroize"]
+
+[dependencies]
+bytes = { version = "1", optional = true, default-features = false }
+hybrid-array = { version = "0.4", optional = true, default-features = false }
+zeroize = { version = "1", optional = true }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
