@@ -2,6 +2,15 @@
 name = "ringo-buff"
 version = "0.1.0"
 edition = "2024"
+authors = ["Roland Rauch"]
+license = "MIT OR Apache-2.0"
+description = "Ring buffers for bytes, with heap and stack storage."
+readme = "../README.md"
+repository = "https://github.com/rrauch/ringo-buff"
+documentation = "https://docs.rs/ringo-buff"
+keywords = ["ring-buffer", "circular-buffer", "bytes", "read", "buffer"]
+categories = ["data-structures", "algorithms", "network-programming", "filesystem", "embedded"]
+rust-version = "1.85"
 
 [features]
 default = ["alloc"]
