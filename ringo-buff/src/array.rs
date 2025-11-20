@@ -46,6 +46,6 @@ impl<const N: usize> StackBuffer<N> {
     /// ```
     pub fn new() -> Self {
         assert!(N > 0);
-        Self::_new_with_storage(Default::default())
+        Self::_new_with_storage([0u8; N])
     }
 }
